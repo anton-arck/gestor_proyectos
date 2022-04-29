@@ -2,9 +2,23 @@
 
 <table class="table table-bordered border-primary">
   <tr>
-    <th>Fecha de creación</th>
-    <th>Título</th>
-    <th>Contenido</th>
-    <th>Imagen</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Fecha de inicio</th>
+    <th>Fecha de termino</th>
+    <th>Estado</th>
   </tr>
+
+  <% @projects.each do |project| %>
+  <tr>
+    <td><%= project.name%></td>
+    <td><%= project.description%></td>
+    <td><%= project.created_at%></td> 
+    <td><%= project.finish_date%></td>
+    <td><%= project.state%></td>
+  </tr>
+  <% end %>
 </table>
+
+
+ <%= link_to("Ingresar más proyectos", "/") %>
