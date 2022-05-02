@@ -1,4 +1,5 @@
 <h1>Proyectos</h1>
+  <%= link_to("Ingresar más proyectos", "/") %>
 
 <table class="table table-bordered border-primary">
   <tr>
@@ -6,19 +7,30 @@
     <th>Descripción</th>
     <th>Fecha de inicio</th>
     <th>Fecha de termino</th>
-    <th>Estado</th>
+    <th>Estado
+      <form method="get" action="/projects/projects">
+        <select name="filter" id="filter">
+          <option value="empty">Todos</option>
+          <option value="propuesta">Propuesta</option>
+          <option value="progreso">Progreso</option>
+          <option value="Terminado">Terminado</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+      </form>
+    </th>
   </tr>
+  
 
-  <% @projects.each do |project| %>
-  <tr>
-    <td><%= project.name%></td>
-    <td><%= project.description%></td>
-    <td><%= project.created_at%></td> 
-    <td><%= project.finish_date%></td>
-    <td><%= project.state%></td>
-  </tr>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.name%></td>
+        <td><%= project.description%></td>
+        <td><%= project.created_at%></td> 
+        <td><%= project.finish_date%></td>
+        <td><%= project.state%></td>
+      </tr>
+
   <% end %>
 </table>
 
 
- <%= link_to("Ingresar más proyectos", "/") %>
