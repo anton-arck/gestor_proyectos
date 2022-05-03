@@ -1,7 +1,7 @@
 <h1>Proyectos</h1>
   <%= link_to("Ingresar más proyectos", "/") %>
 
-<table class="table table-bordered border-primary">
+<table class="table table-bordered border-danger">
   <tr>
     <th>Nombre</th>
     <th>Descripción</th>
@@ -15,7 +15,7 @@
           <option value="progreso">Progreso</option>
           <option value="Terminado">Terminado</option>
         </select>
-        <button type="submit" class="btn btn-primary">Filtrar</button>
+        <button type="submit" class="rounded-pill btn btn-danger">Filtrar</button>
       </form>
     </th>
   </tr>
@@ -25,7 +25,7 @@
       <tr>
         <td><%= project.name%></td>
         <td><%= project.description%></td>
-        <td><%= project.created_at%></td> 
+        <td><%= project.start_date%></td> 
         <td><%= project.finish_date%></td>
         <td><%= project.state%></td>
       </tr>

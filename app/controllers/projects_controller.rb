@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
     @project = Project.create(
     name: params[:name],
     description: params[:description],
-    created_at: params[:created_at],
+    start_date: params[:start_date],
     finish_date: params[:finish_date],
     state: params[:state]
    )
